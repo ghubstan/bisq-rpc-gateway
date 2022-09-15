@@ -1,0 +1,4 @@
+{
+  "RpcServerAddress": "localhost:9998",
+  "RpcProxyAddress": "localhost:8080"
+}

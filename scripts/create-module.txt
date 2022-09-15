@@ -1,0 +1,25 @@
+
+From https://blog.golang.org/using-go-modules
+
+go mod init bisq.grpc.proxy/main
+go mod tidy
+
+
+
+	# https://blog.golang.org/migrating-to-go-modules
+	# Without a dependency manager
+	# For a Go project without a dependency management system, start by creating a go.mod file:
+
+	go mod init golang.org/x/bisq-grpc-gateway
+
+    # In this example, we set the module path to golang.org/x/bisq-grpc-gateway because that is its custom import path.
+    # Users may import packages with this path, and we must be careful not to change it.
+
+	go mod tidy
+
+When using modules, the import path must match the canonical module path, so you may need to update import statements:
+for example, you may need to change import "github.com/golang/lint" to import "golang.org/x/lint".
+
+
+$ go build ./...
+$ go test ./...

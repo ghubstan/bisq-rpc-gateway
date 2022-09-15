@@ -1,0 +1,4 @@
+
+TODO (skip this work for now in case this poc is nack'd)
+
+    Right now, the proxy does not know if the bisq server is up nor down.

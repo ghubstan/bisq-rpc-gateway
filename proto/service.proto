@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+// TODO change bisq's proto pkg name to make protoc-gen-go happy.
+//  WARNING: Malformed 'go_package' option in "proto/service.proto", please specify:
+//      option go_package = "proto;io_bisq_protobuffer";
+//  A future release of protoc-gen-go will reject this.
+//  See https://developers.google.com/protocol-buffers/docs/reference/go-generated#package for more information.
+
+package io.bisq.protobuffer;
+
+import "google/api/annotations.proto";
+
+option go_package = "proto;io.bisq.protobuffer";
+
+message Command {
+    string params = 1;
+}
+
+message Response {
+    string result = 1;
+}
+
+service MessageService {
+    rpc Call(Command) returns (Response) {
+        option (google.api.http) = {
+            post: "/v1/call"
+            body: "*"
+        };
+    }
+}

@@ -1,0 +1,16 @@
+
+TODO (skip this work for now in case this poc is nack'd)
+
+    All json responses should contain top level elements
+        "result"
+        "error {code, message}"    (nested error info)
+        "id"
+
+    If there is no error, the error object is null.
+    If there is an error, the result object is null.
+
+    Examples:
+
+        {"result":{"locked":{"used":96,"free":262048,"total":262144,"locked":262144,"chunks_used":1,"chunks_free":1}},"error":null,"id":"0"}
+
+        {"result":null,"error":{"code":-32601,"message":"Method not found"},"id":"0"}
